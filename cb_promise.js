@@ -29,7 +29,7 @@ function readFileAsync(path){
 // })
 
 //使用nodejs的util模块
-// const util = require('util')
+const util = require('util')
 
 // util.promisify(fs.readFile)('package.json')
 // 	.then(JSON.parse)
@@ -39,4 +39,14 @@ function readFileAsync(path){
 // 	.catch(err=>{
 // 		console.log(err)
 // 	})
+
+const readFileA = util.promisify(fs.readFile);
+
+async function init(){
+	let data = await readFileA('./package.json');
+	data = JSON.parse(data)
+	console.log(data.name)
+}
+
+init()
 	

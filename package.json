@@ -4,7 +4,8 @@
   "description": "koa搭建一个完整电影项目",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"dev": "nodemon -w src --exec babel-node src --presets env"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,12 @@
   },
   "homepage": "https://github.com/1505069266/koa_project_movie#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "co": "^4.6.0",
     "koa": "^2.11.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.0"
   }
 }
