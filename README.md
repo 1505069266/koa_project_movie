@@ -1,5 +1,12 @@
 # koa_project_movie
 koa搭建一个完整电影项目
+## Koa  Express
+ * HTTP  接收  解析  响应
+ * 中间件  执行上下文
+ * Application  Context
+ * Request  Response
+ * Middleware
+ * Session  Cookie
 ## Request
 ```
 request.header

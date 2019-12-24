@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<%- include('./includes/style')%>
+	<%- include('./includes/script')%>
+	<title></title>
+</head>
+<body>
+	<div class="head">
+		<div class="header">
+			<p>豆瓣预告片<a>快捷链接1</a></p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<ul>
+					<li>link 1</li>
+					<li>link 2</li>
+					<li>link 3</li>
+					<li>link 4</li>
+					<li>link 5</li>
+					<li>link 6</li>
+				</ul>
+			</div>
+			<div class="col-md-9 sider">
+				<div class="row movie_content">
+					<div class="col-md-6">
+						<div class=" movie">
+							<div class="movie_img">
+								<img src="https://img-blog.csdnimg.cn/2019072615444519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM2MDYzNA==,size_16,color_FFFFFF,t_70"
+								 data="http://static.smartisanos.cn/common/video/t1-ui.mp4" 
+								 alt="">
+							</div>
+							<div class="movie_item">
+								<p class="movie_title">这是电影标题</p>
+								<p class="movie_desc">这是电影简介</p>
+							</div>
+							<div class="update_time">
+								1天前更新
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class=" movie">
+							<div class="movie_img">
+								<img src="https://img-blog.csdnimg.cn/2019072615444519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM2MDYzNA==,size_16,color_FFFFFF,t_70"
+								 data="http://static.smartisanos.cn/common/video/t1-ui.mp4" 
+								 alt="">
+							</div>
+							<div class="movie_item">
+								<p class="movie_title">这是电影标题</p>
+								<p class="movie_desc">这是电影简介</p>
+							</div>
+							<div class="update_time">
+								1天前更新
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class=" movie">
+							<div class="movie_img">
+								<img src="https://img-blog.csdnimg.cn/2019072615444519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM2MDYzNA==,size_16,color_FFFFFF,t_70"
+								 data="http://static.smartisanos.cn/common/video/t1-ui.mp4" 
+								 alt="">
+							</div>
+							<div class="movie_item">
+								<p class="movie_title">这是电影标题</p>
+								<p class="movie_desc">这是电影简介</p>
+							</div>
+							<div class="update_time">
+								1天前更新
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class=" movie">
+							<div class="movie_img">
+								<img src="https://img-blog.csdnimg.cn/2019072615444519.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzM2MDYzNA==,size_16,color_FFFFFF,t_70"
+								 data="http://static.smartisanos.cn/common/video/t1-ui.mp4" 
+								 alt="">
+							</div>
+							<div class="movie_item">
+								<p class="movie_title">这是电影标题</p>
+								<p class="movie_desc">这是电影简介</p>
+							</div>
+							<div class="update_time">
+								1天前更新
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="movie_show">
+			<div id="close">
+				关
+			</div>
+			<div id="videoModal"></div>
+		</div>
+	</div>
+	<script>
+		let player = null;
+		$(document).ready(function(){
+			
+			$('.movie_img img').click(function(e){
+				e.preventDefault();
+				e.stopPropagation()//阻止事件冒泡
+				$('.movie_show').show()
+				let video = $(this).attr('data')
+				console.log(video)
+				let image = $(this).attr('src')
+				
+				if(!player){
+					player = new DPlayer({
+						container: document.getElementById('videoModal'),
+						screenshot: true,
+						video:{
+							url: video,
+							pic: image,
+							thumbnails:image
+						}
+					})
+					player.play()
+				}else{
+					if(player.video.currentSrc !== video){
+						player.switchVideo({
+							url: video,
+							pic: image,
+							type:'auto'
+						})
+					}else{
+						// player.play()
+					}
+				}
+			})
+		
+		
+		let button = document.getElementById("close");
+		button.onclick = function(){
+			$(".movie_show").hide()
+			player.pause();
+		}
+		
+	})
+	</script>
+</body>
+</html>

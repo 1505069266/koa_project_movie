@@ -1,0 +1,91 @@
+<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap-grid.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css">
+<style>
+*{
+	margin:0;
+	padding:0;
+}
+ul li{
+	list-style:none;
+	
+}
+li{
+	padding: 10px 0;
+	text-align:center;
+	cursor:pointer;
+	transition:.3s;
+}
+li:hover{
+	background:#eee;
+}
+.head{
+	height:50px;
+	background: #ccc;
+}
+.header{
+	width:1140px;
+	margin:0 auto;
+	height:100%;
+	line-height:50px;
+}
+.header p{
+	font-size:20px;
+}
+.header p a{
+	font-size:15px;
+	margin-left:10px;
+}
+.sider{
+	border-left:1px solid #ddd;
+
+}
+.movie_content{
+	padding: 0 10px;
+}
+.movie{
+	border:1px solid #eee;
+	border-radius:10px;
+	margin-top:10px;
+	overflow:hidden;
+}
+.movie_img img{
+	width:100%;
+}
+.movie_title{
+	font-size:25px;
+	font-weight:600;
+}
+.movie_desc{
+	font-size:15px;
+	font-weight:500;
+}
+.update_time{
+	font-size:13px;
+	background:#eee;
+}
+.movie_show{
+	display:none;
+	position:fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height:100%;
+	background:rgba(0,0,0,.3);
+}
+#videoModal{
+	width:50%;
+	margin:20px auto;
+}
+#close{
+	width:50px;
+	height:50px;
+	background:#fff;
+	border-radius:50%;
+	margin:0 auto;
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	margin-top:5%;
+	cursor:pointer;
+}
+</style>

@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel server -s -D -d dist --presets env",
-    "production": "node dist",
-    "server": "nodemon server"
+	"dev": "nodemon -w src --exec babel-node src --presets env",
+	"build": "babel src -s -D -d dist --presets env",
+	"production": "node dist"
   },
   "repository": {
     "type": "git",
@@ -24,13 +24,9 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "co": "^4.6.0",
-    "koa": "^2.11.0",
-    "koa-views": "^6.2.1"
+    "koa": "^2.11.0"
   },
   "dependencies": {
-    "ejs": "^3.0.1",
-    "koa-logger": "^3.2.1",
-    "koa-session": "^5.12.3",
     "node-fetch": "^2.6.0"
   }
 }
