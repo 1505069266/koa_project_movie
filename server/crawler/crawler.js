@@ -51,14 +51,16 @@ const sleep = time=> new Promise((resolve,reject)=>{
 		return links
 	})
 	browser.close()
-	console.log(result)
-	let data = JSON.stringify(result)
-	fs.writeFile('movie.json',data,(err,res)=>{
-		if(err){
-			return console.log(err)
-		}
-		console.log("传输完成")
-	})
+	// console.log(result)
+	// let data = JSON.stringify(result)
+	// fs.writeFile('movie.json',data,(err,res)=>{
+	// 	if(err){
+	// 		return console.log(err)
+	// 	}
+	// 	console.log("传输完成")
+	// })
+	process.send({result})
+	process.exit(0)
 	// const writeStream = fs.createWriteStream('movie.txt')
 	// let data = Buffer.alloc(5,result)
 	// for(let i = 0; i < 100; i++){

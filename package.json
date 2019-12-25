@@ -29,8 +29,10 @@
   },
   "dependencies": {
     "ejs": "^3.0.1",
+    "glob": "^7.1.6",
     "koa-logger": "^3.2.1",
     "koa-session": "^5.12.3",
+    "mongoose": "^5.8.3",
     "node-fetch": "^2.6.0"
   }
 }
